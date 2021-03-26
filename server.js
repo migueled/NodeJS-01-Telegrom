@@ -1,10 +1,13 @@
 const express = require('express');
+const router = express.Router();
 //import expres from 'express'lo mismo de arriba
 
 var app = express();
 
-app.use('/', function(request, response) {
-    response.send('Hello World');
+app.use(router);
+
+router.get('/', function(request, response) {
+    response.send('Hello from get');
 });
 
 app.listen(3000);
