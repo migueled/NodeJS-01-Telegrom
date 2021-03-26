@@ -25,6 +25,7 @@ router.post('/message', function(request, response) {
         responseNetwork.success(request, response, 'Creado correctamente', 201);
     }
 });
+app.use('/app', express.static('public'));
 
 app.listen(3000);
 
