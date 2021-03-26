@@ -8,10 +8,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router);
 
-router.delete('/', function(request, response) {
+router.get('/message', function(request, response) {
+    console.log(request.headers); //leer cabeceras
+    response.header({
+        'custom-header': 'Nuestro avlor persobalizado'
+    });
+    response.send('Hello from get');
+});
+
+router.delete('/message', function(request, response) {
     console.log(request.body);
     console.log(request.query);
-    response.send('Hello ' + request.body.text + ' from get');
+    response.send('Hello ' + request.body.text + ' from delete');
 });
 
 app.listen(3000);
