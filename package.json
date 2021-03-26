@@ -1,0 +1,27 @@
+{
+  "name": "nodejs",
+  "version": "0.1.0",
+  "description": "Un chat como telegram",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/migueled/01-NodeJS.git"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server"
+  ],
+  "author": "Miguel Eduardo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/migueled/01-NodeJS/issues"
+  },
+  "homepage": "https://github.com/migueled/01-NodeJS#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
