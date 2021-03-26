@@ -5,11 +5,12 @@ const router = express.Router();
 
 
 router.get('/', function(request, response) {
-    console.log(request.headers); //leer cabeceras
-    response.header({
-        'custom-header': 'Nuestro avlor persobalizado'
+    controller.getMessage().
+    then((messageList) => {
+        responseNetwork.success(request, response, messageList, 200);
+    }).catch(e => {
+        responseNetwork.error(request, response, 'Unexpected Error', 500, e);
     });
-    responseNetwork.success(request, response, 'Lista de mensajes');
 });
 
 router.post('/', function(request, response) {
