@@ -1,0 +1,33 @@
+--Peticion HTTP
+Puntos clave
+* Metodos
+Qué quieres hacer
+
+*Estado
+Cómo ha ido la operación(Errores)
+
+*Cuerpo
+Lo que el servidor devuelve(Respuestas)
+
+--Métodos, cabeceras y estados
+* Métodos
+el verbo que dice "Lo que queremos hacer" al servidor(
+get	Recoger información del servidor
+Post	Añadir información al servidor
+Put	Reemplazar información en el servidor
+Delete	Eliminar información del servidor
+Patch	Actualizar parte de información
+Options	Pedir información sobre los metodos( Saber si puedes ejecutar post,put, delete, etc)
+)
+*Cabeceras
+Información contextual de la petición( No eslo que quiero hacer, sino cómo lo quiero hacer)
+'Autenticacion, cache, indicaciones, cords, cokies'
+Cookies:compartir información entre peticiones
+Cors:	'Cross origin Resource sharing' Manejar información desde fuera de nuestro servicio
+Accept: Define el contenido que acepta(XLM, HTLM, JSON, UTF8, codificacion)
+Autenticacion: Asegura de que puedes pedir cosas al servidor
+Cache: Almacenamiento temporal(Gestionar durante cuánto tiempo la respuesta será la misma)
+Estados: Número que indica lo que ha pasado con la petición(200, 300, 400, 500)
+
+--Cuerpo y query de la petición
+
