@@ -41,3 +41,5 @@ Una forma de compartir datos en el front end
 	Nombre=valor
 	Separarlos con &
 
+# tener cuidado en mostrara informacion de errores al cliente
+tener cuidado con la informacion y en ocasiones mentir sobre los errores
