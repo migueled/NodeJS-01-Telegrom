@@ -16,10 +16,10 @@ router.get('/message', function(request, response) {
     response.send('Hello from get');
 });
 
-router.delete('/message', function(request, response) {
+router.post('/message', function(request, response) {
     console.log(request.body);
     console.log(request.query);
-    response.send('Hello ' + request.body.text + ' from delete');
+    response.status(201).send([{ error: '', message: 'created success' }]);
 });
 
 app.listen(3000);
