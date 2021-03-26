@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser'); //trabajar con body
 //import expres from 'express'lo mismo de arriba
+const responseNetwork = require('./network/response');
 
 var app = express();
 app.use(bodyParser.json());
@@ -13,13 +14,16 @@ router.get('/message', function(request, response) {
     response.header({
         'custom-header': 'Nuestro avlor persobalizado'
     });
-    response.send('Hello from get');
+    responseNetwork.success(request, response, 'Lista de mensajes');
 });
 
 router.post('/message', function(request, response) {
     console.log(request.body);
-    console.log(request.query);
-    response.status(201).send([{ error: '', message: 'created success' }]);
+    if (request.query.error == 'ok') {
+        responseNetwork.success(request, response, 'Error simulado', 400);
+    } else {
+        responseNetwork.success(request, response, 'Creado correctamente', 201);
+    }
 });
 
 app.listen(3000);
