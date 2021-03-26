@@ -30,4 +30,14 @@ Cache: Almacenamiento temporal(Gestionar durante cuánto tiempo la respuesta ser
 Estados: Número que indica lo que ha pasado con la petición(200, 300, 400, 500)
 
 --Cuerpo y query de la petición
+*Cuerpo
+La información de la petición
+
+*Query
+Añadir información extra.
+Una forma de compartir datos en el front end
+	Estructura:
+	Añadir ? al final de la url
+	Nombre=valor
+	Separarlos con &
 
