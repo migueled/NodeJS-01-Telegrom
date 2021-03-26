@@ -1,6 +1,6 @@
 const express = require('express');
 const responseNetwork = require('../../network/response');
-
+const controller = require('./controller');
 const router = express.Router();
 
 
@@ -13,12 +13,14 @@ router.get('/', function(request, response) {
 });
 
 router.post('/', function(request, response) {
-    console.log(request.body);
-    if (request.query.error == 'ok') {
-        responseNetwork.error(request, response, 'Error inesperado', 500, 'Es solo una simulacion de los errores');
-    } else {
-        responseNetwork.success(request, response, 'Creado correctamente', 201);
-    }
+
+    controller.addMessage(request.body.user, request.body.message).
+    then((fullMessage) => {
+        responseNetwork.success(request, response, fullMessage, 200);
+    }).catch(e => {
+        responseNetwork.error(request, response, 'Error inesperado', 500, 'Error al enviar mensaje');
+    });
+
 });
 
 module.exports = router;
