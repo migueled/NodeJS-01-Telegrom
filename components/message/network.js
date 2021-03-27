@@ -5,7 +5,10 @@ const router = express.Router();
 
 
 router.get('/', function(request, response) {
-    controller.getMessage().
+
+    const filterMessages = request.query.user || null;
+
+    controller.getMessage(filterMessages).
     then((messageList) => {
         responseNetwork.success(request, response, messageList, 200);
     }).catch(e => {
