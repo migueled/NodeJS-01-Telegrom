@@ -35,4 +35,13 @@ router.patch('/:id', function(request, response) {
         responseNetwork.error(request, response, 'Error Interno', 500, e);
     });
 });
+
+router.delete('/:id', function(req, res) { //1
+    controller.deleteMessage(req.params.id).
+    then(() => {
+        responseNetwork.success(req, res, `Usuario ${req.params.id} Eliminado`, 200);
+    }).catch(e => {
+        responseNetwork.error(request, response, 'Error Interno', 500, e);
+    });
+});
 module.exports = router;
