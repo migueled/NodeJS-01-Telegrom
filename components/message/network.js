@@ -24,4 +24,12 @@ router.post('/', function(request, response) {
 
 });
 
+router.patch('/:id', function(request, response) {
+    controller.updateMessage(request.params.id, request.body.message).
+    then((data) => {
+        responseNetwork.success(request, response, data, 200);
+    }).catch(e => {
+        responseNetwork.error(request, response, 'Error Interno', 500, e);
+    });
+});
 module.exports = router;
