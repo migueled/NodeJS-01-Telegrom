@@ -6,7 +6,7 @@ const router = express.Router();
 const path = require('path'); // no es necesario ejecutar npm
 
 const storage = multer.diskStorage({
-    destination: "uploads/",
+    destination: "public/files/",
     filename: (req, file, cb) => {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
@@ -26,8 +26,7 @@ router.get('/', function(request, response) {
 });
 
 router.post('/', upload.single('file'), function(request, response) {
-
-    controller.addMessage(request.body.chat, request.body.user, request.body.message).
+    controller.addMessage(request.body.chat, request.body.user, request.body.message, request.file).
     then((fullMessage) => {
         responseNetwork.success(request, response, fullMessage, 200);
     }).catch(e => {
