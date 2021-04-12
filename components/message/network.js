@@ -4,9 +4,10 @@ const responseNetwork = require('../../network/response');
 const controller = require('./controller');
 const router = express.Router();
 const path = require('path'); // no es necesario ejecutar npm
+const config = require('../../config');
 
 const storage = multer.diskStorage({
-    destination: "public/files/",
+    destination: 'public/' + config.filesRoute + '/',
     filename: (req, file, cb) => {
         cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
     }
