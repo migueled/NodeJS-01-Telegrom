@@ -1,7 +1,7 @@
-const user = 'root';
-const pass = 'Showstooper01';
-const host = 'cluster0.nwhy7.mongodb.net';
-const database = 'telegrom';
+const user = '';
+const pass = '';
+const host = '';
+const database = '';
 
 const config = {
     dbUrl: process.env.DB_URL || `mongodb+srv://${user}:${pass}@${host}/${database}?retryWrites=true&w=majority`,
